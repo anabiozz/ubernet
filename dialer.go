@@ -34,14 +34,14 @@ func (d *Dialer) resolver() *net.Resolver {
 // DialTCP ..
 func (d *Dialer) DialTCP(ctx context.Context, network, address string) (net.Conn, error) {
 
-	addrs, err := d.resolver().resolveAddrList(ctx, "dial", network, address, d.LocalAddr)
-	if err != nil {
-		return nil, &OpError{Op: "dial", Net: network, Source: nil, Addr: nil, Err: err}
-	}
+	// addrs, err := d.resolver().resolveAddrList(ctx, "dial", network, address, d.LocalAddr)
+	// if err != nil {
+	// 	return nil, &OpError{Op: "dial", Net: network, Source: nil, Addr: nil, Err: err}
+	// }
 
-	_, err := createSocket(ctx, network, d.LocalAddr, syscall.SOCK_STREAM, 0)
-	if err != nil {
-		panic(err)
-	}
+	// _, err := createSocket(ctx, network, d.LocalAddr, syscall.SOCK_STREAM, 0)
+	// if err != nil {
+	// 	panic(err)
+	// }
 	return nil, nil
 }
